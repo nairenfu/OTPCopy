@@ -40,15 +40,20 @@ public class SmsReceiver extends BroadcastReceiver {
                 body = body.concat(message.getMessageBody());
             }
 
+            sender = sender.replace("+", "").replace(" ", "");
+
             Log.d("smsSender", sender);
             Log.d("smsBody", body);
-
-            //TODO get rid of symbols, spaces, brackets...
-            /*if (MainActivity.otpSenders.containsKey(Long.parseLong(sender))) {
+            
+            if (!MainActivity.isRestricted) {
                 smsListener.onSmsReceived(strip(body));
-            }*/
+            } else {
+                if (MainActivity.otpSenders.containsKey(Long.parseLong(sender))) {
+                    smsListener.onSmsReceived(strip(body));
+                }
+            }
 
-            smsListener.onSmsReceived(strip(body));
+
         }
     }
 

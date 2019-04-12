@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">OTPCopy</string>
+
+    <string name="stop_service">Stop Service</string>
+    <string name="start_service">Start Service</string>
+
+    <string name="add_info">Add OTP senders</string>
+    <string name="add_name">Name</string>
+    <string name="add_number">Number</string>
+    <string name="add_button">Add</string>
+</resources>

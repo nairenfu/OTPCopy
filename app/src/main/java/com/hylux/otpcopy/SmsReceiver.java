@@ -44,9 +44,11 @@ public class SmsReceiver extends BroadcastReceiver {
             Log.d("smsBody", body);
 
             //TODO get rid of symbols, spaces, brackets...
-            if (MainActivity.otpSenders.containsKey(Long.parseLong(sender))) {
+            /*if (MainActivity.otpSenders.containsKey(Long.parseLong(sender))) {
                 smsListener.onSmsReceived(strip(body));
-            }
+            }*/
+
+            smsListener.onSmsReceived(strip(body));
         }
     }
 
